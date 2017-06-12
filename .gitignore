@@ -1,0 +1,7 @@
+
+*.pper
+
+R/.Rproj.user/*
+
+R/.Rhistory
+.Rproj.user
