@@ -78,7 +78,7 @@ fte_theme <- function() {
 startMonthLabel <- month(ymd(fromDate), label = TRUE, abbr = FALSE)
 currentMonthLabel <- month(ymd(currentDate), label = TRUE, abbr = FALSE)
 
-graphTitle <- paste0("Wikipedia (EN) Pageviews of ","'",keyword,"'"," from ",startMonthLabel," ",startYear," to ",currentMonthLabel," ",currentYear)
+graphTitle <- paste0("Daily Wikipedia (EN) pageviews of ","'",keyword,"'"," from ",startMonthLabel," ",startYear," to ",currentMonthLabel," ",currentYear)
 
 #Graph it
 
