@@ -3,7 +3,7 @@
 ## R SCRIPT:
 
 #Create datafile
-allViewsData <- NULL 
+allViewsData <- NULL
 
 #Starting the loop for the download
 for (theURL in allURLs) {
@@ -24,12 +24,15 @@ for (theURL in allURLs) {
 allViewsData$Date <- as.Date(allViewsData$Date)
 
 #Sort on date
-allViewsData <- allViewsData[order(allViewsData$Date),]
+allViewsData <- allViewsData[order(allViewsData$Date), ]
 
-#Clean the data
+##Clean the data
+#Remove unavailable dates
 allViewsData <- subset(allViewsData, !is.na(Date))
+#Remove dates where there are 0 views (probably a data collection error)
+allViewsData <- subset(allViewsData, Views != 0)
 
 #Graph it
-ggplot(data=allViewsData, aes(x=Date, y=Views)) + geom_line()
+ggplot(data = allViewsData, aes(x = Date, y = Views)) + geom_line()
 
 ## END OF SCRIPT
