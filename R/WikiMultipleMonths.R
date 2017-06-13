@@ -16,6 +16,7 @@ for (year in (2007:currentYear)) {
   for (month in (1:12)) {
     if ((year == currentYear) && month > currentMonth) {
       next
+      
     }
     
     theURL <- "http://stats.grok.se/json/en/"
