@@ -6,19 +6,19 @@
 #### INPUT VARIABLES ###############################################
 ### Allows you to select the keyword and starting date
 keyword <- "Friday"
-fromDate <- "2007-06-01"  #YYYY-MM-DD - Day input here has no effect
+fromDate <- "2007-12-01"  #YYYY-MM-DD - Day input here has no effect
 ####################################################################
+
+#Figure our the "from" year and month
+startYear <- year(fromDate)
+startMonth <- month(fromDate)
 
 # Figure out the current year and month
 currentDate <- Sys.Date()
 currentYear <- year(currentDate)
 currentMonth <- month(currentDate)
 
-#Figure our the "from" year and month
-startYear <- year(fromDate)
-startMonth <- month(fromDate)
-
-#Creating Data file
+#Creating Data storage
 allURLs <- NULL
 
 #Starting the data collection loop
@@ -29,7 +29,7 @@ for (year in (startYear:currentYear)) {
       
     }
     if ((year == currentYear) && month > currentMonth) {
-      next
+      break
       
     }
     
