@@ -5,7 +5,7 @@
 
 #### INPUT VARIABLES ###############################################
 ### Allows you to select the keyword and starting date
-keyword <- "Friday"
+keyword <- "Magento"
 fromDate <- "2007-12-01"  #YYYY-MM-DD - Day input here has no effect
 ####################################################################
 
