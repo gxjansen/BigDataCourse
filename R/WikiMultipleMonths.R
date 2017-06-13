@@ -1,19 +1,33 @@
+### Select the correct URLs for a certain date range to download Pageviews data from
+### This is used as input for DownloadAllData.R
+
 ## R Script
 
-# What are we looking for?
+#### INPUT VARIABLES ###############################################
+### Allows you to select the keyword and starting date
 keyword <- "Friday"
+fromDate <- "2007-06-01"  #YYYY-MM-DD - Day input here has no effect
+####################################################################
 
-# Figure out the year and month
+# Figure out the current year and month
 currentDate <- Sys.Date()
 currentYear <- year(currentDate)
 currentMonth <- month(currentDate)
+
+#Figure our the "from" year and month
+startYear <- year(fromDate)
+startMonth <- month(fromDate)
 
 #Creating Data file
 allURLs <- NULL
 
 #Starting the data collection loop
-for (year in (2007:currentYear)) {
+for (year in (startYear:currentYear)) {
   for (month in (1:12)) {
+    if ((year == startYear) && month < startMonth) {
+      next
+      
+    }
     if ((year == currentYear) && month > currentMonth) {
       next
       

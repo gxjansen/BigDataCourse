@@ -1,3 +1,5 @@
+### Download JSON Data from the URLs defined in WikiMultipleMonths.R
+
 ## R SCRIPT:
 
 #Create datafile
