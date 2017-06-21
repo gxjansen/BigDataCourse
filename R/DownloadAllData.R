@@ -84,7 +84,7 @@ graphTitle <- paste0("Daily Wikipedia (EN) pageviews of ","'",keyword,"'"," from
 
 ggplot(data = allViewsData, aes(x= Date, y= Views)) +
   geom_point(alpha=0.1, color="#f46f25", size=2) +
-  scale_y_log10(labels=comma, breaks=10^(0:6)) +
+  scale_y_log10(labels = scales::comma, breaks=10^(0:6)) +
   geom_hline(yintercept=1, size=0.4, color="black") +
   geom_smooth(alpha=0.25, color="black", fill="black", method="auto") +
   fte_theme() +
